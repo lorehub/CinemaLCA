@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CinemaLCA.ApiXamarin.Views.LoginPage">
+    <ContentPage.Content>
+       
+        <Grid x:Name="LoginGrid" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" Grid.RowSpan="3" Color="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+            <StackLayout Grid.Row="1" Orientation="Vertical" Margin="0,40,0,10">
+                <StackLayout Orientation="Vertical" 
+                             VerticalOptions="Center" 
+                             Margin="0,5,0,0">
+                    <Image Source="play.jpg" Aspect="AspectFit" Margin="10" 
+                               HeightRequest="200" WidthRequest="200"  
+                               HorizontalOptions="FillAndExpand"/>  
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                    <Label
+                            BindingContext="{x:Reference usuarioEntry}"
+                            x:Name="labelMensaje" 
+                            Text="{Binding Text}"
+                            TextColor="Gray"
+                            FontAttributes="Bold"
+                            FontSize="18"/>
+            </StackLayout>
+            
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <StackLayout Orientation="Vertical" Margin="40,20">
+                    <Entry Text="Admin" 
+                           x:Name="usuarioEntry" 
+                           TextColor="Gray"
+                           FontAttributes="Bold"
+                           Placeholder="Usuario" 
+                           PlaceholderColor="Gray" 
+                           Keyboard="Email" FontSize="18"/>                    
+                    <Entry Text="CinemaAdmin" 
+                           x:Name="passwordEntry" 
+                           TextColor="Gray"
+                           FontAttributes="Bold"
+                           Placeholder="Password" 
+                           PlaceholderColor="Gray" 
+                           Keyboard="Email" FontSize="18"/>
+                    <Button Margin="0,100"
+                            Text="Ingresar" 
+                            BackgroundColor="Snow" 
+                            TextColor="Gray"     
+                            FontSize="18"
+                            Command="{Binding LoginCommand}"
+                            Clicked="Ingresar"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

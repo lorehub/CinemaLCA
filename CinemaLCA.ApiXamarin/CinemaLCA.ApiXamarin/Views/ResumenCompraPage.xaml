@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CinemaLCA.ApiXamarin.Views.ResumenCompraPage"
+             Title="Resumen Compra">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Image Source="{Binding pelicula.Imagen}"/>
+            </StackLayout>
+            <StackLayout >
+                <Label Text="PELICULA" FontAttributes="Bold"/>
+                <Label Text="Titulo"/>
+                <Label Text="{Binding pelicula.Nombre}"/>
+                <Label Text="Fecha"/>
+                <Label Text="{Binding pelicula.FechaEstreno}"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="FUNCION" FontAttributes="Bold"/>
+                <Label Text="Cinema"/>
+                <Label Text="{Binding funcion.Cinema}"/>
+                <Label Text="Sala"/>
+                <Label Text="{Binding funcion.Sala}"/>
+                <Label Text="Ciudad"/>
+                <Label Text="{Binding funcion.Ciudad}"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="TIQUETES" FontAttributes="Bold"/>
+                <Label Text="Precio"/>
+                <Label Text="{Binding funcion.Precio}"/>
+                <Label Text="Cantidad"/>
+                <Label Text="{Binding cantidad}"/>
+                <Label Text="Total a pagar"/>
+                <Label Text="{Binding total}"/>
+                <Button Text="Finalizar compra"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
